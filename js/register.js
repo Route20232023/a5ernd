@@ -195,6 +195,7 @@ function allValidationInputs(regex, element, alertMsg) {
 
   if (pattern.test(element.value) == true) {
     alertMsg.classList.replace("d-block", "d-none");
+    
     return true;
   } else {
     alertMsg.classList.replace("d-none", "d-block");
