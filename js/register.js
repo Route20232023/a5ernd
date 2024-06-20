@@ -208,7 +208,7 @@ function checkAllInputsAreValid() {
     allValidationInputs(/^[a-zA-Z]{3,}$/, fNameInput, firstNameAlert) &&
     allValidationInputs(/^[a-zA-Z]{3,}$/, lNameInput, secondNameAlert) &&
     allValidationInputs(
-      /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/,
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
       emailInput,
       emailAlert
     ) &&
