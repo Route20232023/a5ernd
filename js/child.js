@@ -267,13 +267,24 @@ async function upadateChild(id) {
     console.log(data);
     const modalElement = document.getElementById("exampleModal");
     const modal = bootstrap.Modal.getInstance(modalElement);
-    modal.hide();
+    if(data.errors){
     Swal.fire({
+      title: "Invalid Data",
+      text: `Please Enter Valid Data`,
+      icon: "error",
+    });
+    }else{
+      console.log('yes');
+      Swal.fire({
       title: "Good job!",
       text: `Data Updated Successfully`,
       icon: "success",
     });
+    modal.hide();
+    }
+    
   } catch (err) {
+    console.log('NOOOOO');
     console.log(err, "error");
   }
 }

@@ -294,9 +294,14 @@ body {
 } /*# sourceMappingURL=about.css.map */
 
 /* about video  */
-
+.video-container{
+  height: 356px;
+}
 .about-video{
   width: 100%;
+  object-fit: fill;
+  height: 100%;
+  
 }
 
 

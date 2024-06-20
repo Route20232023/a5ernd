@@ -12,6 +12,8 @@ async function getAllCamps() {
 }
 getAllCamps();
 
+
+
 function displayCamps(data) {
   let cartoona = "";
   for (let i = 0; i < data.length; i++) {
@@ -25,7 +27,7 @@ function displayCamps(data) {
         : "./img/Spring-camp.jpg";
 
     cartoona += `
-     <div class="col-lg-4 col-md-6 wow fadeInUp ${data[i].isActive == false ? 'opacity-30':""}" data-wow-delay="0.1s" id="Hello">
+     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" id="Hello">
             <div class="classes-item">
               <div class="bg-light rounded-circle w-75 mx-auto p-3">
                 <img
@@ -34,9 +36,9 @@ function displayCamps(data) {
                   alt=""
                 />
               </div>
-              <div class="bg-light rounded p-4 pt-5 mt-n5">
+              <div class="bg-light rounded p-4 pt-5 mt-n5 position-relative">
                 <a class="d-block text-center h3 mt-3 mb-4 ${data[i].isActive == true ? "" : 'pointer-none'}"  href="${data[i].isActive == false ? "" :`campDetails.html?id=${data[i].id}`}"
-                  >${data[i].description}</a
+                  >${data[i].description}  ${data[i].isActive == true ? "" : ' <span class="position-absolute edjed bg-danger text-white p-1 rounded">In Active<i class="fa-solid fa-ban mx-1 "></i></span>'} </a
                 >
                   <p class="text-center">${data[i].campType}</p>
                 <div class="row g-1">
@@ -77,7 +79,6 @@ function displayCamps(data) {
   }
   campsWrapper.innerHTML = cartoona;
 }
-
 
 
 
