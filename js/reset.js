@@ -46,6 +46,12 @@ resetPassword.addEventListener("submit", async function (e) {
       // Do something for a successful Login
       console.log(data);
       console.log("All done");
+      // Swal.fire({
+      //   title: "Email Sent Successfully",
+      //   text: "Check Your E-mail",
+      //   icon: "success",
+      // });
+      
 
       //   localStorage.setItem("userToken", data.token);
     } else {

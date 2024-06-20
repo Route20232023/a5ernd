@@ -22,21 +22,26 @@ forgotPassword.addEventListener("submit", async function (e) {
         }),
       }
     );
-    if (res.ok) {
-      // Login successful
-      let data = await res.json();
-      // Do something for a successful Login
-      console.log(data);
-      console.log("All done");
-
-    //   localStorage.setItem("userToken", data.token);
-    } else {
-      // Login failed
-      let errorData = await res.json();
-      console.log(errorData);
-      console.log("not done");
+    let data = await res.json()
+    console.log(data); 
+    if(data.statusCode ==200){
+      console.log('Sent');
+      Swal.fire({
+          title: "Email Sent Successfully",
+          text: "Check Your E-mail",
+          icon: "success",
+        });
+    }else{
+      console.log('Not Sent');
+      Swal.fire({
+        title: "Invalid Email Aress",
+        text: "Please Enter Exist Email",
+        icon: "error",
+      });
+      
     }
   } catch (err) {
     console.log(err, "er");
+
   }
 });
