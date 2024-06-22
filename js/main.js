@@ -15,6 +15,9 @@
     };
     spinner();
 
+
+
+    try{
 // Button According to role 
 let signInOrLogOut = document.querySelector('.signInOut')
 
@@ -34,9 +37,15 @@ if(localStorage.getItem('userToken')!= null){
   })
 
 }
+    }catch(err){
+        console.log(err);
+    }
 
 
 
+
+
+try{
 // profile hidden if not login
 let  profileNavLink = document.querySelector('.profileNavLink');
 if(localStorage.getItem('userToken')!=null){
@@ -46,6 +55,11 @@ if(localStorage.getItem('userToken')!=null){
   profileNavLink.remove()
 }
 // profile hidden if not login End 
+}catch(err){
+    console.log(err);
+}
+
+
 
     // Sticky Navbar
     $(window).scroll(function () {

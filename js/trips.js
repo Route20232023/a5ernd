@@ -130,6 +130,7 @@ if(localStorage.getItem('userToken')){
   });
 }
   
+loopThroughFormInputs(this)
 });
 
 function tripsAllValidationInputs(regex, element, alertMsg) {
@@ -205,3 +206,34 @@ function isDateSelected() {
     return true;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+function loopThroughFormInputs(form) {
+  // Check if the form parameter is a valid form element
+  if (!(form instanceof HTMLFormElement)) {
+      console.error("The provided element is not a valid form.");
+      return;
+  }
+
+  // Get all input elements within the form
+  const inputs = form.elements;
+
+  // Loop through each input element
+  for (let i = 0; i < inputs.length; i++) {
+      const input = inputs[i];
+      
+      input.value=""
+  }
+}
+
+

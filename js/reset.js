@@ -40,27 +40,28 @@ resetPassword.addEventListener("submit", async function (e) {
         }),
       }
     );
-    if (res.ok) {
-      // Login successful
-      let data = await res.json();
-      // Do something for a successful Login
-      console.log(data);
-      console.log("All done");
-      // Swal.fire({
-      //   title: "Email Sent Successfully",
-      //   text: "Check Your E-mail",
-      //   icon: "success",
-      // });
-      
+    let data = await res.json();
 
-      //   localStorage.setItem("userToken", data.token);
+    console.log(data);
+
+    if (data.statusCode == 400) {
+      console.log(data.errors);
+      Swal.fire({
+        title: "Error",
+        text: `${data.errors[0]}`,
+        icon: "error",
+      });
     } else {
-      // Login failed
-      let errorData = await res.json();
-      console.log(errorData);
-      console.log("not done");
+      Swal.fire({
+        title: "Success",
+        text: "Password Rest Successfullt",
+        icon: "success",
+      });
     }
   } catch (err) {
-    console.log(err, "er");
+    console.log(err);
   }
+
+
+
 });
